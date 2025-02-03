@@ -1,0 +1,1 @@
+Please read the [notebook](README.ipynb) containing LaTeX.
