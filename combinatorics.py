@@ -10,7 +10,7 @@ def fact(n):
     return result
 
 def nPr(n, r=None):
-    ''' `n` Permute `r` (without replacement)
+    ''' `n` permute `r` (without replacement)
     
 		default (r = n)
     '''
@@ -32,8 +32,5 @@ def nCr(n, r):
     return int(permutations / fact(r))
 
 def multichoose(n, r):
-    ''' `n` multichoose `r` (with replacement)
-    
-		select `r` from `n` varieties
-    '''
+    ''' Select `r` from `n` varieties (with replacement) '''
     return nCr(r + n-1, r)
