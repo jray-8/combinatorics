@@ -1,1 +1,1 @@
-Please read the [notebook](README.ipynb) containing LaTeX.
+Please read the [notebook](formulas.ipynb) containing LaTeX.
