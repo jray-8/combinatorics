@@ -9,7 +9,7 @@ def factorial(n):
         result *= i
     return result
 
-def nPr(n, r=None):
+def permute(n, r=None):
     ''' `n` permute `r` (without replacement)
     
 		default (r = n)
@@ -17,20 +17,20 @@ def nPr(n, r=None):
     if r is None:
         r = n
     if not isinstance(n, int) or not isinstance(r, int):
-        raise TypeError('P(n, r): input must be positive integers')
+        raise TypeError('permute(n, r): input must be positive integers')
     elif (n < 0) or (r < 0):
-        raise ValueError('P(n, r): n, r >= 0')
+        raise ValueError('permute(n, r): n, r >= 0')
     elif (n - r) < 0:
-        raise ValueError('P(n, r): n must be >= r')
+        raise ValueError('permute(n, r): n must be >= r')
     return int(factorial(n) / factorial(n-r))
 
-def nCr(n, r):
+def choose(n, r):
     ''' `n` choose `r` (without replacement) '''
-    permutations = nPr(n,r)
+    permutations = permute(n,r)
     if permutations is None:
         return None
     return int(permutations / factorial(r))
 
 def multichoose(n, r):
     ''' Select `r` from `n` varieties (with replacement) '''
-    return nCr(r + n-1, r)
+    return choose(r + n-1, r)
